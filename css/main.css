@@ -379,6 +379,10 @@ body {
   top: 0;
   height: 100%;
 }
+
+.bar-title {
+  height: 77px;
+}
 /*=============Estilos navegacion lateral*/
 .navLateral {
   left: 0;
@@ -510,6 +514,14 @@ body {
 }
 .pageContent-change {
   width: 100%;
+}
+.text-padding {
+  padding: 40px 20px 0;
+  font-weight: bold;
+}
+.text-sutittle {
+  font-size: 18px;
+  padding-bottom: 15px;
 }
 /*=====================================================
           Estilos home
