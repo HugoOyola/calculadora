@@ -1,16 +1,4 @@
 $(document).ready(function(){
-  /*Mostrar ocultar area de notificaciones*/
-  $('.btn-Notification').on('click', function(){
-        var ContainerNoty=$('.container-notifications');
-        var NotificationArea=$('.NotificationArea');
-        if(NotificationArea.hasClass('NotificationArea-show')&&ContainerNoty.hasClass('container-notifications-show')){
-            NotificationArea.removeClass('NotificationArea-show');
-            ContainerNoty.removeClass('container-notifications-show');
-        }else{
-            NotificationArea.addClass('NotificationArea-show');
-            ContainerNoty.addClass('container-notifications-show');
-        }
-    });
     /*Mostrar ocultar menu principal*/
     $('.btn-menu').on('click', function(){
       var navLateral=$('.navLateral');
