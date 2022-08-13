@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>REGISTRO DE ENCUENTAS</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/sweetalert2.css" />
+    <link rel="stylesheet" href="css/material.min.css" />
+    <link rel="stylesheet" href="css/material-design-iconic-font.min.css" />
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/material.min.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <!-- navBar -->
+    <div class="full-width navBar">
+      <div class="full-width navBar-options">
+        <i class="zmdi zmdi-more-vert btn-menu" id="btn-menu"></i>
+        <div class="mdl-tooltip" for="btn-menu">Menu</div>
+        <nav class="navBar-options-list">
+          <ul class="list-unstyle">
+            <li class="btn-exit" id="btn-exit">
+              <i class="zmdi zmdi-power"></i>
+              <div class="mdl-tooltip" for="btn-exit">Cerrar Sesión</div>
+            </li>
+            <li class="text-condensedLight noLink"><small>Mari Alva</small></li>
+            <li class="noLink">
+              <figure>
+                <img src="assets/img/avatar-female.png" alt="Avatar" class="img-responsive" />
+              </figure>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- navLateral -->
+    <section class="full-width navLateral">
+      <div class="full-width navLateral-bg btn-menu"></div>
+      <div class="full-width navLateral-body">
+        <div class="full-width navLateral-body-logo text-center tittles"><i class="zmdi zmdi-close btn-menu"></i>Calculadora</div>
+        <figure class="full-width bar-title">
+          <div class="navLateral-body-cl">
+            <img src="assets/img/avatar-female.png" alt="Avatar" class="img-responsive" />
+          </div>
+          <figcaption class="navLateral-body-cr hide-on-tablet">
+            <span>
+              Mari Alva<br />
+              <small>Administrador</small>
+            </span>
+          </figcaption>
+        </figure>
+        <div class="full-width tittles navLateral-body-tittle-menu"><i class="zmdi zmdi-desktop-mac"></i><span class="hide-on-tablet">&nbsp; DASHBOARD</span></div>
+        <nav class="full-width">
+          <ul class="full-width list-unstyle menu-principal">
+            <li class="full-width">
+              <a href="./home.html" class="full-width">
+                <div class="navLateral-body-cl">
+                  <i class="zmdi zmdi-home"></i>
+                </div>
+                <div class="navLateral-body-cr hide-on-tablet">INICIO</div>
+              </a>
+            </li>
+            <li class="full-width divider-menu-h"></li>
+            <li class="full-width">
+              <a href="./encuesta.html" class="full-width">
+                <div class="navLateral-body-cl">
+                  <i class="zmdi zmdi-tab"></i>
+                </div>
+                <div class="navLateral-body-cr hide-on-tablet">REALIZAR ENCUESTA</div>
+              </a>
+            </li>
+            <li class="full-width divider-menu-h"></li>
+            <li class="full-width">
+              <a href="./reporte.html" class="full-width">
+                <div class="navLateral-body-cl">
+                  <i class="zmdi zmdi-view-web"></i>
+                </div>
+                <div class="navLateral-body-cr hide-on-tablet">GENERAR REPORTES</div>
+              </a>
+            </li>
+            <li class="full-width divider-menu-h"></li>
+            <li class="full-width">
+              <a href="./usuario.html" class="full-width">
+                <div class="navLateral-body-cl">
+                  <i class="zmdi zmdi-accounts"></i>
+                </div>
+                <div class="navLateral-body-cr hide-on-tablet">USUARIOS</div>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+    <!-- pageContent -->
+    <section class="full-width pageContent">
+      <section class="full-width header-well">
+        <div class="full-width header-well-icon">
+          <i class="zmdi zmdi-file-plus"></i>
+        </div>
+        <div class="full-width header-well-text">
+          <p class="text-condensedLight">
+            MODULO DE REGISTRO <br />
+            <small>Aquí podrás registrar las encuestas que se realizarán a los usuarios.</small>
+          </p>
+        </div>
+      </section>
+      <div class="full-width divider-menu-h"></div>
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
+          <div class="full-width panel mdl-shadow--2dp">
+            <div class="full-width panel-tittle bg-primary text-center tittles">NUEVA ENCUESTA</div>
+            <div class="full-width panel-content">
+              <form>
+                <div class="mdl-grid">
+                  <div class="mdl-cell mdl-cell--12-col-phone mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
+                    <h5 class="text-condensedLight text-color">INFORMACIÓN DEL USUARIO</h5>
+                    <hr class="hr-line" />
+                  </div>
+                  <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <select class="mdl-textfield__input" name="sexo" title="sexo">
+                        <option value="" selected="">Seleccionar Sexo</option>
+                        <option value="">Masculino</option>
+                        <option value="">Femenino</option>
+                      </select>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="edad" max="99" />
+                      <label class="mdl-textfield__label" for="edad">Edad</label>
+                      <span class="mdl-textfield__error">Ingresar edad válida</span>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="text" pattern="-?[0-9.]*(\.[0-9]+)?" id="peso" maxlength="6" />
+                      <label class="mdl-textfield__label" for="peso">Peso (Kg)</label>
+                      <span class="mdl-textfield__error">Datos no válidos</span>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="text" pattern="-?[0-9.]*(\.[0-9]+)?" id="talla" maxlength="6" />
+                      <label class="mdl-textfield__label" for="talla">Talla (cm)</label>
+                      <span class="mdl-textfield__error">Datos no válidos</span>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="text" pattern="-?[0-9.]*(\.[0-9]+)?" id="pabdominal" maxlength="6" />
+                      <label class="mdl-textfield__label" for="pabdominal">Perímetro abdominal (cm)</label>
+                      <span class="mdl-textfield__error">Datos no válidos</span>
+                    </div>
+                  </div>
+                  <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <select class="mdl-textfield__input" title="Presión Arterial">
+                        <option value="" selected="">Seleccionar Rango de Presión Arterial</option>
+                        <option value="">>120/>80</option>
+                        <option value="">140-159 (PAs) o 90-99 (PAd)</option>
+                        <option value="">160-179 (PAs) o 100-109 (PAd)</option>
+                        <option value="">180 (PAs) o 110 (PAd)</option>
+                      </select>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <select class="mdl-textfield__input" title="Hiper trigliceridemia">
+                        <option value="" selected="">Seleccionar Hiper trigliceridemia</option>
+                        <option value="">SI</option>
+                        <option value="">NO</option>
+                      </select>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <select class="mdl-textfield__input" title="Colesterol">
+                        <option value="" selected="">Seleccionar Colesterol</option>
+                        <option value="">SI</option>
+                        <option value="">NO</option>
+                      </select>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <select class="mdl-textfield__input" title="Hipertensión">
+                        <option value="" selected="">Seleccionar Hipertensión</option>
+                        <option value="">SI</option>
+                        <option value="">NO</option>
+                      </select>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <select class="mdl-textfield__input" title="Diabetes mellitus tipo 2">
+                        <option value="" selected="">Seleccionar Diabetes mellitus tipo 2</option>
+                        <option value="">SI</option>
+                        <option value="">NO</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="mdl-cell mdl-cell--12-col-phone mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
+                    <h5 class="text-condensedLight text-color">ANTECEDENTES FAMILIARES</h5>
+                    <hr class="hr-line" />
+                  </div>
+                  <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>¿Tiene triglicéridos elevados? (puedes contestar más de 1)</span>
+                      <br />
+                      <br />
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="a-1">
+                        <input type="checkbox" id="a-1" class="mdl-checkbox__input" />
+                        <span class="mdl-checkbox__label">Papá</span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="a-2">
+                        <input type="checkbox" id="a-2" class="mdl-checkbox__input" />
+                        <span class="mdl-checkbox__label">Mamá</span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="a-3">
+                        <input type="checkbox" id="a-3" class="mdl-checkbox__input" />
+                        <span class="mdl-checkbox__label">Hermano (a)</span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="a-4">
+                        <input type="checkbox" id="a-4" class="mdl-checkbox__input" />
+                        <span class="mdl-checkbox__label">Ninguno</span>
+                      </label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>¿Alguien de tu familia tiene colesterol elevado? (puedes contestar más de 1)</span>
+                      <br />
+                      <br />
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="b-1">
+                        <input type="checkbox" id="b-1" class="mdl-checkbox__input" />
+                        <span class="mdl-checkbox__label">Papá</span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="b-2">
+                        <input type="checkbox" id="b-2" class="mdl-checkbox__input" />
+                        <span class="mdl-checkbox__label">Mamá</span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="b-3">
+                        <input type="checkbox" id="b-3" class="mdl-checkbox__input" />
+                        <span class="mdl-checkbox__label">Hermano (a)</span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="b-4">
+                        <input type="checkbox" id="b-4" class="mdl-checkbox__input" />
+                        <span class="mdl-checkbox__label">Ninguno</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>¿Alguien de tu familia tiene hipertensión? (puedes contestar más de 1)</span>
+                      <br />
+                      <br />
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="c-1">
+                        <input type="checkbox" id="c-1" class="mdl-checkbox__input" />
+                        <span class="mdl-checkbox__label">Papá</span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="c-2">
+                        <input type="checkbox" id="c-2" class="mdl-checkbox__input" />
+                        <span class="mdl-checkbox__label">Mamá</span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="c-3">
+                        <input type="checkbox" id="c-3" class="mdl-checkbox__input" />
+                        <span class="mdl-checkbox__label">Hermano (a)</span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="c-4">
+                        <input type="checkbox" id="c-4" class="mdl-checkbox__input" />
+                        <span class="mdl-checkbox__label">Ninguno</span>
+                      </label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>¿Alguien de tu familia tiene diabetes mellitus tipo 2? (puedes contestar más de 1)</span>
+                      <br />
+                      <br />
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="d-1">
+                        <input type="checkbox" id="d-1" class="mdl-checkbox__input" />
+                        <span class="mdl-checkbox__label">Papá</span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="d-2">
+                        <input type="checkbox" id="d-2" class="mdl-checkbox__input" />
+                        <span class="mdl-checkbox__label">Mamá</span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="d-3">
+                        <input type="checkbox" id="d-3" class="mdl-checkbox__input" />
+                        <span class="mdl-checkbox__label">Hermano (a)</span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="d-4">
+                        <input type="checkbox" id="d-4" class="mdl-checkbox__input" />
+                        <span class="mdl-checkbox__label">Ninguno</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="mdl-cell mdl-cell--12-col-phone mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
+                    <h5 class="text-condensedLight text-color">ESTILO DE VIDA</h5>
+                    <hr class="hr-line" />
+                  </div>
+                  <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>Tengo con quien hablar de las cosas que son importantes para mí:</span>
+                      <br />
+                      <br />
+                      <div class="padding-left">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="e-1">
+                          <input type="radio" id="e-1" class="mdl-radio__button" name="options" value="1" />
+                          <span class="mdl-radio__label">Casi siempre</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="e-2">
+                          <input type="radio" id="e-2" class="mdl-radio__button" name="options" value="2" />
+                          <span class="mdl-radio__label">A veces</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="e-3">
+                          <input type="radio" id="e-3" class="mdl-radio__button" name="options" value="3" />
+                          <span class="mdl-radio__label">Casi nunca</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>
+                        Soy integrante activo(a) de un grupo de apoyo a mi salud y calidad de vida (organizaciones de autocuidado, clubes de enfermos crónicos, deportivos,
+                        religiosos, mujeres, adultos mayores, vecinales y otros). Yo participo:
+                      </span>
+                      <br />
+                      <br />
+                      <div class="padding-left">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="f-1">
+                          <input type="radio" id="f-1" class="mdl-radio__button" name="options" value="1" />
+                          <span class="mdl-radio__label">Casi siempre</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="f-2">
+                          <input type="radio" id="f-2" class="mdl-radio__button" name="options" value="2" />
+                          <span class="mdl-radio__label">A veces</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="f-3">
+                          <input type="radio" id="f-3" class="mdl-radio__button" name="options" value="3" />
+                          <span class="mdl-radio__label">Casi nunca</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>Yo camino al menos 30minutos diariamente:</span>
+                      <br />
+                      <br />
+                      <div class="padding-left">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="g-1">
+                          <input type="radio" id="g-1" class="mdl-radio__button" name="options" value="1" />
+                          <span class="mdl-radio__label">Casi siempre</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="g-2">
+                          <input type="radio" id="g-2" class="mdl-radio__button" name="options" value="2" />
+                          <span class="mdl-radio__label">A veces</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="g-3">
+                          <input type="radio" id="g-3" class="mdl-radio__button" name="options" value="3" />
+                          <span class="mdl-radio__label">Casi nunca</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>Como 2 porciones de verduras y 3 frutas:</span>
+                      <br />
+                      <br />
+                      <div class="padding-left">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="h-1">
+                          <input type="radio" id="h-1" class="mdl-radio__button" name="options" value="1" />
+                          <span class="mdl-radio__label">Casi siempre</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="h-2">
+                          <input type="radio" id="h-2" class="mdl-radio__button" name="options" value="2" />
+                          <span class="mdl-radio__label">A veces</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="h-3">
+                          <input type="radio" id="h-3" class="mdl-radio__button" name="options" value="3" />
+                          <span class="mdl-radio__label">Casi nunca</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>A menudo consumo mucha azúcar o sal o comida chatarra o con mucha grasa:</span>
+                      <br />
+                      <br />
+                      <div class="padding-left">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="i-1">
+                          <input type="radio" id="i-1" class="mdl-radio__button" name="options" value="1" />
+                          <span class="mdl-radio__label">Casi siempre</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="i-2">
+                          <input type="radio" id="i-2" class="mdl-radio__button" name="options" value="2" />
+                          <span class="mdl-radio__label">A veces</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="i-3">
+                          <input type="radio" id="i-3" class="mdl-radio__button" name="options" value="3" />
+                          <span class="mdl-radio__label">Casi nunca</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>Generalmente fumo ___ cigarrillos por día:</span>
+                      <br />
+                      <br />
+                      <div class="padding-left">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="j-1">
+                          <input type="radio" id="j-1" class="mdl-radio__button" name="options" value="1" />
+                          <span class="mdl-radio__label">Casi siempre</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="j-2">
+                          <input type="radio" id="j-2" class="mdl-radio__button" name="options" value="2" />
+                          <span class="mdl-radio__label">A veces</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="j-3">
+                          <input type="radio" id="j-3" class="mdl-radio__button" name="options" value="3" />
+                          <span class="mdl-radio__label">Casi nunca</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>Bebo más de cuatro tragos en una misma ocasión:</span>
+                      <br />
+                      <br />
+                      <div class="padding-left">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="l-1">
+                          <input type="radio" id="l-1" class="mdl-radio__button" name="options" value="1" />
+                          <span class="mdl-radio__label">Casi siempre</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="l-2">
+                          <input type="radio" id="l-2" class="mdl-radio__button" name="options" value="2" />
+                          <span class="mdl-radio__label">A veces</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="l-3">
+                          <input type="radio" id="l-3" class="mdl-radio__button" name="options" value="3" />
+                          <span class="mdl-radio__label">Casi nunca</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>Uso drogas como marihuana, cocaína o pasta base:</span>
+                      <br />
+                      <br />
+                      <div class="padding-left">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="m-1">
+                          <input type="radio" id="m-1" class="mdl-radio__button" name="options" value="1" />
+                          <span class="mdl-radio__label">Casi siempre</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="m-2">
+                          <input type="radio" id="m-2" class="mdl-radio__button" name="options" value="2" />
+                          <span class="mdl-radio__label">A veces</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="m-3">
+                          <input type="radio" id="m-3" class="mdl-radio__button" name="options" value="3" />
+                          <span class="mdl-radio__label">Casi nunca</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>Uso excesivamente los remedios que me indican o los que puedo comprar sin receta:</span>
+                      <br />
+                      <br />
+                      <div class="padding-left">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="n-1">
+                          <input type="radio" id="n-1" class="mdl-radio__button" name="options" value="1" />
+                          <span class="mdl-radio__label">Casi siempre</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="n-2">
+                          <input type="radio" id="n-2" class="mdl-radio__button" name="options" value="2" />
+                          <span class="mdl-radio__label">A veces</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="n-3">
+                          <input type="radio" id="n-3" class="mdl-radio__button" name="options" value="3" />
+                          <span class="mdl-radio__label">Casi nunca</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>Bebo café, té o bebidas cola que tienen cafeína:</span>
+                      <br />
+                      <br />
+                      <div class="padding-left">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="o-1">
+                          <input type="radio" id="o-1" class="mdl-radio__button" name="options" value="1" />
+                          <span class="mdl-radio__label">Casi siempre</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="o-2">
+                          <input type="radio" id="o-2" class="mdl-radio__button" name="options" value="2" />
+                          <span class="mdl-radio__label">A veces</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="o-3">
+                          <input type="radio" id="o-3" class="mdl-radio__button" name="options" value="3" />
+                          <span class="mdl-radio__label">Casi nunca</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>Duermo bien y me siento descansado/a:</span>
+                      <br />
+                      <br />
+                      <div class="padding-left">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="p-1">
+                          <input type="radio" id="p-1" class="mdl-radio__button" name="options" value="1" />
+                          <span class="mdl-radio__label">Casi siempre</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="p-2">
+                          <input type="radio" id="p-2" class="mdl-radio__button" name="options" value="2" />
+                          <span class="mdl-radio__label">A veces</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="p-3">
+                          <input type="radio" id="p-3" class="mdl-radio__button" name="options" value="3" />
+                          <span class="mdl-radio__label">Casi nunca</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>Yo me siento capaz de manejar el estrés o la tensión de mi vida:</span>
+                      <br />
+                      <br />
+                      <div class="padding-left">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="ea-1">
+                          <input type="radio" id="ea-1" class="mdl-radio__button" name="options" value="1" />
+                          <span class="mdl-radio__label">Casi siempre</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="ea-2">
+                          <input type="radio" id="ea-2" class="mdl-radio__button" name="options" value="2" />
+                          <span class="mdl-radio__label">A veces</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="ea-3">
+                          <input type="radio" id="ea-3" class="mdl-radio__button" name="options" value="3" />
+                          <span class="mdl-radio__label">Casi nunca</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>Yo me relajo y disfruto mi tiempo libre:</span>
+                      <br />
+                      <br />
+                      <div class="padding-left">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="fa-1">
+                          <input type="radio" id="fa-1" class="mdl-radio__button" name="options" value="1" />
+                          <span class="mdl-radio__label">Casi siempre</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="fa-2">
+                          <input type="radio" id="fa-2" class="mdl-radio__button" name="options" value="2" />
+                          <span class="mdl-radio__label">A veces</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="fa-3">
+                          <input type="radio" id="fa-3" class="mdl-radio__button" name="options" value="3" />
+                          <span class="mdl-radio__label">Casi nunca</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>Parece que ando acelerado/a:</span>
+                      <br />
+                      <br />
+                      <div class="padding-left">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="ga-1">
+                          <input type="radio" id="ga-1" class="mdl-radio__button" name="options" value="1" />
+                          <span class="mdl-radio__label">Casi siempre</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="ga-2">
+                          <input type="radio" id="ga-2" class="mdl-radio__button" name="options" value="2" />
+                          <span class="mdl-radio__label">A veces</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="ga-3">
+                          <input type="radio" id="ga-3" class="mdl-radio__button" name="options" value="3" />
+                          <span class="mdl-radio__label">Casi nunca</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>Me siento enojado/ a o agresivo/ a:</span>
+                      <br />
+                      <br />
+                      <div class="padding-left">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="ha-1">
+                          <input type="radio" id="ha-1" class="mdl-radio__button" name="options" value="1" />
+                          <span class="mdl-radio__label">Casi siempre</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="ha-2">
+                          <input type="radio" id="ha-2" class="mdl-radio__button" name="options" value="2" />
+                          <span class="mdl-radio__label">A veces</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="ha-3">
+                          <input type="radio" id="ha-3" class="mdl-radio__button" name="options" value="3" />
+                          <span class="mdl-radio__label">Casi nunca</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>Yo me siento contento(a) con mi trabajo o mis actividades:</span>
+                      <br />
+                      <br />
+                      <div class="padding-left">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="ia-1">
+                          <input type="radio" id="ia-1" class="mdl-radio__button" name="options" value="1" />
+                          <span class="mdl-radio__label">Casi siempre</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="ia-2">
+                          <input type="radio" id="ia-2" class="mdl-radio__button" name="options" value="2" />
+                          <span class="mdl-radio__label">A veces</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="ia-3">
+                          <input type="radio" id="ia-3" class="mdl-radio__button" name="options" value="3" />
+                          <span class="mdl-radio__label">Casi nunca</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>Yo soy un pensador positivo u optimista:</span>
+                      <br />
+                      <br />
+                      <div class="padding-left">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="ja-1">
+                          <input type="radio" id="ja-1" class="mdl-radio__button" name="options" value="1" />
+                          <span class="mdl-radio__label">Casi siempre</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="ja-2">
+                          <input type="radio" id="ja-2" class="mdl-radio__button" name="options" value="2" />
+                          <span class="mdl-radio__label">A veces</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="ja-3">
+                          <input type="radio" id="ja-3" class="mdl-radio__button" name="options" value="3" />
+                          <span class="mdl-radio__label">Casi nunca</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>Me siento tenso/a o apretado/a:</span>
+                      <br />
+                      <br />
+                      <div class="padding-left">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="la-1">
+                          <input type="radio" id="la-1" class="mdl-radio__button" name="options" value="1" />
+                          <span class="mdl-radio__label">Casi siempre</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="la-2">
+                          <input type="radio" id="la-2" class="mdl-radio__button" name="options" value="2" />
+                          <span class="mdl-radio__label">A veces</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="la-3">
+                          <input type="radio" id="la-3" class="mdl-radio__button" name="options" value="3" />
+                          <span class="mdl-radio__label">Casi nunca</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>Me siento deprimido/ a o triste:</span>
+                      <br />
+                      <br />
+                      <div class="padding-left">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="ma-1">
+                          <input type="radio" id="ma-1" class="mdl-radio__button" name="options" value="1" />
+                          <span class="mdl-radio__label">Casi siempre</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="ma-2">
+                          <input type="radio" id="ma-2" class="mdl-radio__button" name="options" value="2" />
+                          <span class="mdl-radio__label">A veces</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="ma-3">
+                          <input type="radio" id="ma-3" class="mdl-radio__button" name="options" value="3" />
+                          <span class="mdl-radio__label">Casi nunca</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>Me realizo controles de salud en forma periódica:</span>
+                      <br />
+                      <br />
+                      <div class="padding-left">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="na-1">
+                          <input type="radio" id="na-1" class="mdl-radio__button" name="options" value="1" />
+                          <span class="mdl-radio__label">Casi siempre</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="na-2">
+                          <input type="radio" id="na-2" class="mdl-radio__button" name="options" value="2" />
+                          <span class="mdl-radio__label">A veces</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="na-3">
+                          <input type="radio" id="na-3" class="mdl-radio__button" name="options" value="3" />
+                          <span class="mdl-radio__label">Casi nunca</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>Converso con mi pareja o mi familia temas de sexualidad:</span>
+                      <br />
+                      <br />
+                      <div class="padding-left">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="oa-1">
+                          <input type="radio" id="oa-1" class="mdl-radio__button" name="options" value="1" />
+                          <span class="mdl-radio__label">Casi siempre</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="oa-2">
+                          <input type="radio" id="oa-2" class="mdl-radio__button" name="options" value="2" />
+                          <span class="mdl-radio__label">A veces</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="oa-3">
+                          <input type="radio" id="oa-3" class="mdl-radio__button" name="options" value="3" />
+                          <span class="mdl-radio__label">Casi nunca</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <span>En mi conducta sexual me preocupo del autocuidado y del cuidado de mi pareja:</span>
+                      <br />
+                      <br />
+                      <div class="padding-left">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="pa-1">
+                          <input type="radio" id="pa-1" class="mdl-radio__button" name="options" value="1" />
+                          <span class="mdl-radio__label">Casi siempre</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="pa-2">
+                          <input type="radio" id="pa-2" class="mdl-radio__button" name="options" value="2" />
+                          <span class="mdl-radio__label">A veces</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect text-padding" for="pa-3">
+                          <input type="radio" id="pa-3" class="mdl-radio__button" name="options" value="3" />
+                          <span class="mdl-radio__label">Casi nunca</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-center">
+                  <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addAdmin">
+                    <i class="zmdi zmdi-plus"></i>
+                  </button>
+                  <div class="mdl-tooltip" for="btn-addAdmin">Agregar Encuesta</div>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
