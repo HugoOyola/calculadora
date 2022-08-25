@@ -28,6 +28,7 @@ body {
   font-family: "RobotoRegular";
   position: relative;
   background-color: #fff;
+  counter-reset: my-sec-counter;
 }
 .text-condensedLight {
   font-family: "RobotoCondensedLight";
@@ -690,6 +691,18 @@ body {
 .padding-left {
   padding-left: 20px;
 }
+
+/* .number {
+  counter-increment: titleList;
+} */
+
+.number::before {
+  font-weight: 700;
+  color: red;
+  counter-increment: my-sec-counter;
+  content: "Pregunta " counter(my-sec-counter) ": ";
+}
+
 /*=====================================================
           Estilos products
 ======================================================*/
